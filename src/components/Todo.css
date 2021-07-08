@@ -1,0 +1,10 @@
+.task {
+    background: blue;
+    color: white;
+    margin-top: 2px;
+}
+
+.completed {
+    background: rgb(112, 112, 212);
+    text-decoration: line-through;
+}
