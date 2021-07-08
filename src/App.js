@@ -58,11 +58,22 @@ class App extends React.Component {
     })
   }
 
+  handleClearCompleted = () => {
+    const newThingsToDo = this.state.thingsToDo.filter(item => {
+      return !item.completed
+    })
+
+    this.setState({
+      thingsToDo: newThingsToDo
+    })
+
+  }
+
   render() {
     return (
       <div>
         <h2>Stuff To Get Done...</h2>
-        <ToDoForm handleAddItem={this.handleAddItem}/>
+        <ToDoForm handleAddItem={this.handleAddItem} handleClearCompleted={this.handleClearCompleted}/>
         <ToDoList thingsToDo={this.state.thingsToDo} handleTaskToggle={this.handleTaskToggle}/>
       </div>
     );

@@ -27,12 +27,16 @@ class ToDoForm extends React.Component {
         }
     }
 
+    handleClickClear = () => {
+        this.props.handleClearCompleted()
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input type="text" name="newToDo" onChange={this.handleChanges} value={this.state.inputValue} />
-                <button>Add To Do</button>
-                <button>Clear Completed</button>
+                <button name="addToDo">Add To Do</button>
+                <button name="clearCompleted" onClick={this.handleClickClear}>Clear Completed</button>
             </form>
         )
     }
